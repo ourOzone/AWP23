@@ -82,7 +82,6 @@ const Board = () => {
         setModifyDesc('');
 
     };
-
     return (
         <Container>
             <HourColumn>
@@ -139,7 +138,7 @@ const Board = () => {
                         </ModalRowContainer>
                         <ModalRowContainer>
                             <ModalLabel>합주 시간</ModalLabel>
-                            <InfoLabel>{info && `${daysKor[info.day]}요일 ${idx2hour[info.startTime]} ~ ${idx2hour[info.endTime + 1]}`}</InfoLabel>
+                            <InfoLabel>{info && `${daysKor[info.day]}요일 ${idx2hour[info.start_time]} ~ ${idx2hour[info.end_time + 1]}`}</InfoLabel>
                         </ModalRowContainer>
                         <ModalRowContainer>
                             <ModalLabel>합주실</ModalLabel>

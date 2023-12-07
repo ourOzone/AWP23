@@ -128,6 +128,7 @@ app.post('/teammodify', async (req, res) => {
     existingTeam.type = req.body.type;
 
     await existingTeam.save();
+    await Ensemble.updateMany({ teamId }, { $set: { teamName: req.body.name } });
 
     res.json({ id: teamId });
   } catch (error) {
@@ -219,6 +220,7 @@ app.get('/ensembleinfo', async (req, res) => {
       room: ensemble.room,
       type: ensemble.type,
       due: ensemble.due,
+      day: ensemble.day,
     };
 
     res.json(ensembleInfo);
